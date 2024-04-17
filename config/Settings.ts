@@ -5,7 +5,7 @@ import {
 
 export enum AppSetting {
     NAMESPACE = "",
-    GENAI_STACK_API_URL = "http://localhost:8504/query-stream"
+    GENAI_STACK_API_URL = "http://localhost:8504/query-stream",
 }
 
 export const settings: Array<ISetting> = [

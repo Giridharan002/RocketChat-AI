@@ -18,12 +18,12 @@ export async function sendMessage(
         .startMessage()
         .setRoom(room)
         .setText(message);
-    if (thread_id !== undefined){
-        msg.setThreadId(thread_id)
+    if (thread_id !== undefined) {
+        msg.setThreadId(thread_id);
     }
-    if (sender !== undefined){
-        msg.setSender(sender)
+    if (sender !== undefined) {
+        msg.setSender(sender);
     }
-    
+
     return await modify.getCreator().finish(msg);
 }

@@ -51,7 +51,7 @@ export async function sendDirect(
     destination: IUser,
     read: IRead,
     modify: IModify,
-    message: string,
+    message: string
 ): Promise<void> {
     const messageStructure = modify.getCreator().startMessage();
     // get the appUser username

@@ -1,4 +1,3 @@
-// ui/AskRcModal.ts
 import { IModify } from "@rocket.chat/apps-engine/definition/accessors";
 import { IRoom } from "@rocket.chat/apps-engine/definition/rooms";
 import {
@@ -18,7 +17,6 @@ export function createaskaiModal(
 ): IUIKitContextualBarViewParam {
     const blocks = modify.getCreator().getBlockBuilder();
 
-    // Debugging: Log the initial prompt and thread ID
     console.log("Initial Prompt:", initialPrompt);
     console.log("Thread ID:", threadId);
 
@@ -35,7 +33,6 @@ export function createaskaiModal(
         }),
     });
 
-    // Define output options
     var answer_options = [
         {
             text: blocks.newPlainTextObject("Send me a direct message"),
@@ -72,9 +69,7 @@ export function createaskaiModal(
         blockId: AppSetting.NAMESPACE + "_askchat_ai",
         optional: false,
         element: blocks.newMultiStaticElement({
-            placeholder: blocks.newPlainTextObject(
-                "Output response as..."
-            ),
+            placeholder: blocks.newPlainTextObject("Output response as..."),
             actionId: "output_option",
             initialValue: [answer_initialValue],
             options: answer_options,
@@ -82,7 +77,6 @@ export function createaskaiModal(
         label: blocks.newPlainTextObject("Output"),
     });
 
-    // Debugging: Log the configured blocks
     console.log("Configured Blocks:", blocks.getBlocks());
 
     return {
@@ -95,5 +89,5 @@ export function createaskaiModal(
             value: "as-thread",
             style: ButtonStyle.PRIMARY,
         }),
-    }
+    };
 }
